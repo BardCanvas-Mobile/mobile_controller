@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    
+    <version>0.0.1</version>
+    <group>modules_misc</group>
+    
+    <working_flags>
+        <install>true</install>
+        <uninstall>true</uninstall>
+        <enable>true</enable>
+        <disable>true</disable>
+    </working_flags>
+    
+    <php_includes>
+        <bootstrap>extenders/bootstrap.inc</bootstrap>
+        <document_handler>extenders/document_handler.inc</document_handler>
+    </php_includes>
+    
+    <extends_to>
+        <settings>
+            <specs_renderer>
+                <preinits>extenders/settings_preinits.inc</preinits>
+                <services_order>extenders/settings_services_order.inc</services_order>
+            </specs_renderer>
+        </settings>
+    </extends_to>
+    
+    <extension_areas_info><![CDATA[
+        Services registry: definitions.
+    ]]></extension_areas_info>
+    
+</module>

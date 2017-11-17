@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+    
+    <display_name>Controlador de App Móvil</display_name>
+    <icon>fa-mobile</icon>
+    <description><![CDATA[
+        Controlador para servicios ofrecidos a través de la App Móvil de BardCanvas.
+        <b>Importante:</b> Debe ser extendido por otros módulos para que funcione.
+    ]]></description>
+    
+    <set_label>Introduce una etiqueta</set_label>
+    
+    <authenticator>
+        <no_username_provided>No has especificado un nombre de usuario.</no_username_provided>
+        <invalid_username_provided>Por favor especifica un nombre de usuario válido.</invalid_username_provided>
+        <no_password_provided>No has especificado la contraseña para tu cuenta.</no_password_provided>
+        <no_device_id_provided>No se ha recibido el identificador de tu dispositivo.</no_device_id_provided>
+        <invalid_password_provided>Se ha recibido un formato de contraseña inválido.</invalid_password_provided>
+        <account_not_found>No se ha encontrado ninguna cuenta con el nombre de usuario o alias especificado.</account_not_found>
+        <invalid_password>Contraseña incorrecta.</invalid_password>
+        <account_disabled>La cuenta está desactivada. Si consideras que esto es un error, visita nuestro sitio web y usa la forma de contacto para solicitar asistencia.</account_disabled>
+        <unknown_device>Error: tu dispositivo no ha sido encontrado en la base de datos de usuarios. Por favor elimina este sitio web y agrégalo de nuevo.</unknown_device>
+        <disabled_account>Error: esta cuenta está desactivada en nuestra base de datos.</disabled_account>
+        <disabled_device>Error: este dispositivo ha sido deshabilitado. Deberás abrir sesión desde un navegador y eliminarlo o reactivarlo.</disabled_device>
+    </authenticator>
+    
+    <settings_data>
+        <title>Controlador móvil</title>
+        
+        <!-- ======================================= -->
+        <specs is_separator="true">Datos básicos</specs>
+        <!-- ======================================= -->
+        
+        <specs key="services_engine_enabled">
+            <title>Motor de servicios activo</title>
+            <description><![CDATA[
+                Si deseas desactivar todos los servicios móviles, usa esta opción.<br><br>
+                <i class="fa fa-info-circle"></i>
+                Cuando la app móvil se conecta al sitio web, buscará un manifiesto de servicios.
+                Este módulo lo genera con base en toda la configuración especificada en estos controles.<br><br>
+                Si el motor está activo, podrás ver el manifiesto
+                <a href="{$full_root_url}/bardcanvas_mobile.json" target="_blank">dando click aquí</a>.
+            ]]></description>
+            <type>boolean</type>
+        </specs>
+        
+        <specs key="full_name">
+            <title>Título completo</title>
+            <description><![CDATA[
+                Título/nombre del sitio web tal cual se presenta al usuario de la app.
+                De no especificarse, se usará el nombre del sitio web.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="short_name">
+            <title>Nombre corto</title>
+            <description><![CDATA[
+                Nombre corto del sitio web. De no especificarse, se usará el título completo especificado
+                arriba.<br>
+                <i class="fa fa-info-circle"></i>
+                Si el nombre del sitio web es muy largo, especificar aquí un par de palabras.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="version">
+            <title>Versión de los servicios</title>
+            <description><![CDATA[
+                Usar un entero y decimales (p.e. <code>1.1</code>) para definir la versión.<br>
+                <i class="fa fa-info-circle"></i>
+                Debe incrementarse en caso de modificar la configuración de los servicios.<br>
+                <i class="fa fa-warning"></i>
+                Es posible que otros módulos modifiquen este valor.
+            ]]></description>
+            <type>number</type>
+            <options>
+                <step>any</step>
+            </options>
+        </specs>
+        
+        <specs key="last_update">
+            <title>Fecha de última actualización</title>
+            <description><![CDATA[
+                Sólo para referencia interna. Especificar en el siguiente formato:
+                <code>aaaa-mm-dd hh:mm</code>
+            ]]></description>
+            <type>date</type>
+        </specs>
+        
+        <specs key="root_url">
+            <title>URL calificada del sitio web</title>
+            <description><![CDATA[
+                Si el sitio web puede accesarse vía <code>www.dominio.com</code> y <code>dominio.com</code>,
+                es indispensable definir uno de los dos como el punto correcto de acceso,
+                el cual sería, preferentemente, <code>dominio.com</code>.<br>
+                Es indispensable anteponer <code>http://</code> o <code>https://</code>.<br>
+                <i class="fa fa-warning"></i> <b>Importante:</b>
+                Si el acceso al sitio tiene redireccionamientos, la URL aquí especificada debe
+                ser directa, evitándolos.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="description">
+            <title>Descripción</title>
+            <description><![CDATA[
+                Descripción breve de los servicios que se ofrecen a través de la plataforma móvil.
+            ]]></description>
+            <type>textarea</type>
+        </specs>
+        
+        <specs key="icon">
+            <title>Icono del sitio web</title>
+            <description><![CDATA[
+                Una imagen de 256x256 pixeles para ubicar el sitio en los menús de la app.
+            ]]></description>
+            <type>@gallery:specs_renderer/image_selector</type>
+            <options>
+                <image_size>full</image_size>
+            </options>
+        </specs>
+        
+        <specs key="language_caption">
+            <title>Lenguaje</title>
+            <description><![CDATA[
+                Lenguaje/lenguajes en los que se muestra el contenido.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="disclaimer">
+            <title>Renuncia de responsabilidades</title>
+            <description><![CDATA[
+                Si el sitio web ofrece contenidos delicados o servicios que requieran aclaraciones
+                anticipadas, usa esta área para describirlos.
+                Puedes usar código HTML básico.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="login_required">
+            <title>Solicitar autenticación</title>
+            <description><![CDATA[
+                De activarse, la app solicitará al usuario credenciales de acceso a fin de poder
+                añadir este sitio a su listado.
+            ]]></description>
+            <type>boolean</type>
+        </specs>
+        
+        <!-- =============================================== -->
+        <specs is_separator="true">Datos del propietario</specs>
+        <!-- =============================================== -->
+        
+        <specs key="company">
+            <title>Nombre del propietario</title>
+            <description><![CDATA[
+                Nombre de la empresa o persona propietaria de este sitio. Opcional.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="company_page_url">
+            <title>Sitio web del propietario </title>
+            <description><![CDATA[
+                Debe empezar con <code>http://</code> o <code>https://</code>. Opcional.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <!-- ============================================ -->
+        <specs is_separator="true">Servicios: control</specs>
+        <!-- ============================================ -->
+        
+        <specs key="services_registry">
+            <title>Registro de servicios</title>
+            <description><![CDATA[
+                Usa este selector para activar/desactivar/reordenar los servicios disponibles al usuario.<br><br>
+                Para modificar la configuración de cada servicio, checa los grupos de opciones debajo.
+            ]]></description>
+            <type>@mobile_controller:specs_renderer/services_order</type>
+        </specs>
+        
+    </settings_data>
+    
+</language>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+    
+    <display_name>Mobile App Controller</display_name>
+    <icon>fa-mobile</icon>
+    <description><![CDATA[
+        Controller for services offered through the BardCanvas Mobile App.
+        <b>Important:</b> It must be extended by other modules in order to work.
+    ]]></description>
+    
+    <set_label>Set a label</set_label>
+    
+    <authenticator>
+        <no_username_provided>Please specify a user name.</no_username_provided>
+        <invalid_username_provided>Please specify a valid user name.</invalid_username_provided>
+        <no_password_provided>Please specify your account password.</no_password_provided>
+        <no_device_id_provided>Device identifier not received. It is not possible to find your account from this device.</no_device_id_provided>
+        <invalid_password_provided>Invalid password format received.</invalid_password_provided>
+        <account_not_found>Account not found.</account_not_found>
+        <invalid_password>Invalid password.</invalid_password>
+        <account_disabled>Your account is disabled. If you think this is an error, please visit our website and use the contact form to ask for help.</account_disabled>
+        <unknown_device>Error: your device wasn't found on the database. Please delete this website from the app and add it again.</unknown_device>
+        <disabled_account>Error: your account is disabled. You wont be able to login.</disabled_account>
+        <disabled_device>Error: this device has been disabled. You will have to login to the website using a web browser and enable or delete this device and try again.</disabled_device>
+    </authenticator>
+    
+</language>
