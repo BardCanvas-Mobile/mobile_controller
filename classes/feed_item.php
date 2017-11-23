@@ -15,8 +15,11 @@ class feed_item extends abstract_record
     public $author_creation_date = "";
     public $author_country_name  = "";
     
-    public $featured_image_path      = "";
-    public $featured_image_thumbnail = "";
+    public $featured_image_id              = 0;
+    public $featured_image_path            = "";
+    public $featured_image_thumbnail       = "";
+    public $has_featured_image             = false;
+    public $featured_image_not_in_contents = false;
     
     public $main_category_title   = "";
     public $parent_category_title = "";
@@ -26,34 +29,43 @@ class feed_item extends abstract_record
     public $content = "";
     
     public $publishing_date   = "";
-    public $comments_count    = 0;
     public $creation_ip       = "";
     public $creation_location = "";
     
     /**
-     * @var bool
+     * @var action[]
      */
-    public $author_can_be_disabled = false;
+    public $index_actions = array();
+    
+    public $has_index_actions = false;
     
     /**
-     * @var bool
+     * @var action[]
      */
-    public $can_be_deleted = false;
+    public $item_actions = array();
+    
+    public $has_item_actions = false;
     
     /**
-     * @var bool
+     * @var content_block[]
      */
-    public $can_be_drafted = false;
+    public $excerpt_extra_blocks = array();
     
     /**
-     * @var bool
-     */
-    public $can_be_flagged_for_review = false;
-    
-    /**
-     * @var feed_item_extra_content_block[]
+     * @var content_block[]
      */
     public $extra_content_blocks = array();
+    
+    public $comments_count = 0;
+    
+    /**
+     * @var feed_item_comment[]
+     */
+    public $comments = array();
+    
+    public $allow_new_comments = false;
+    
+    public $comments_limit_for_index = 10;
     
     public function set_new_id() {}
 }
