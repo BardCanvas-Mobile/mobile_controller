@@ -33,16 +33,16 @@ class feed_item extends abstract_record
     public $creation_location = "";
     
     /**
-     * @var action[]
+     * @var action_trigger[]
      */
-    public $index_actions = array();
+    public $index_action_triggers = array();
     
     public $has_index_actions = false;
     
     /**
-     * @var action[]
+     * @var action_trigger[]
      */
-    public $item_actions = array();
+    public $item_action_triggers = array();
     
     public $has_item_actions = false;
     

@@ -27,6 +27,7 @@
     
     <extension_areas_info><![CDATA[
         Services registry: definitions.
+        Actions registry: definitions.
     ]]></extension_areas_info>
     
 </module>

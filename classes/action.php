@@ -5,11 +5,13 @@ use hng2_repository\abstract_record;
 
 class action extends abstract_record
 {
-    public $caption;
+    public $id = "";
     
-    public $icon;
+    public $module_name = "";
     
-    public $class;
+    public $script_url = "";
+    
+    public $call_method = "get";
     
     public function set_new_id() {}
 }

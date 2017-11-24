@@ -7,6 +7,7 @@
  * @author     Alejandro Caballero - lava.caballero@gmail.com
  */
 
+use hng2_modules\mobile_controller\action;
 use hng2_modules\mobile_controller\service;
 
 if( empty($_GET["handle"]) ) return;
@@ -39,6 +40,7 @@ $manifest = (object) array(
     "timezoneOffset"     => strftime("%z"),
     
     "services"           => array(),
+    "actionsRegistry"    => array(),
 );
 
 #region Services setup
@@ -87,6 +89,30 @@ foreach($services as $service)
     
     $service->forge($manifest);
 }
+
+#=========
+#endregion
+
+#region Actions Registry setup
+#=============================
+
+$manifest->actionsRegistry["accounts:disable"] = new action(array(
+    "id"          => "accounts:disable",
+    "module_name" => "accounts",
+    "script_url"  => "{$modules["accounts"]->get_url(true)}/scripts/toolbox.php?mode=disable",
+));
+
+if( $modules["messaging"]->enabled )
+{
+    $manifest->actionsRegistry["messaging:compose"] = new action(array(
+        "id"          => "messaging:compose",
+        "module_name" => "messaging",
+        "script_url"  => "{$modules["messaging"]->get_url(true)}/send_pm.php",
+        "call_method" => "post",
+    ));
+}
+
+$this_module->load_extensions("actions_registry", "definitions");
 
 #=========
 #endregion

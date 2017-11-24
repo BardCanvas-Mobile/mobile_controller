@@ -41,9 +41,9 @@ class feed_item_comment extends abstract_record
     public $has_actions = false;
     
     /**
-     * @var action[]
+     * @var action_trigger[]
      */
-    public $actions = array();
+    public $action_triggers = array();
     
     public function set_new_id() {}
 }
