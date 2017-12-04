@@ -39,5 +39,10 @@
             ]]></disable_account>
         </success_notifications>
     </messages>
+
+    <!-- Todo: translate this!!! -->
+    <settings_data>
+        
+    </settings_data>
     
 </language>
