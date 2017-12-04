@@ -96,14 +96,21 @@ foreach($services as $service)
 #region Actions Registry setup
 #=============================
 
+# Disable account
 $manifest->actionsRegistry["accounts:disable"] = new action(array(
     "id"          => "accounts:disable",
     "module_name" => "accounts",
     "script_url"  => "{$modules["accounts"]->get_url(true)}/scripts/toolbox.php?mode=disable",
+    "options"     => array(
+        "requires_confirmation" => true,
+        "confirmation_message"  => unindent($this_module->language->messages->prompts->disable_account),
+        "success_notification"  => unindent($this_module->language->messages->success_notifications->disable_account),
+    ),
 ));
 
 if( $modules["messaging"]->enabled )
 {
+    # Send PM
     $manifest->actionsRegistry["messaging:compose"] = new action(array(
         "id"          => "messaging:compose",
         "module_name" => "messaging",

@@ -12,6 +12,7 @@
     </working_flags>
     
     <php_includes>
+        <after_loading_session>extenders/session_enforcer.inc</after_loading_session>
         <bootstrap>extenders/bootstrap.inc</bootstrap>
         <document_handler>extenders/document_handler.inc</document_handler>
     </php_includes>

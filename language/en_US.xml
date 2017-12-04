@@ -24,4 +24,20 @@
         <disabled_device>Error: this device has been disabled. You will have to login to the website using a web browser and enable or delete this device and try again.</disabled_device>
     </authenticator>
     
+    <messages>
+        <prompts>
+            <disable_account><![CDATA[
+                Are you sure that you want to disable this account?<br>
+                All the user's published elements will be hidden from indexes.
+                The user wont receive any notification.
+            ]]></disable_account>
+        </prompts>
+        <success_notifications>
+            <disable_account><![CDATA[
+                The account has been disabled. You will need to refresh any website indexes or pages
+                already open.
+            ]]></disable_account>
+        </success_notifications>
+    </messages>
+    
 </language>

@@ -38,12 +38,12 @@ class feed_item_comment extends abstract_record
     
     public $author_level = 0;
     
-    public $has_actions = false;
-    
     /**
      * @var action_trigger[]
      */
     public $action_triggers = array();
+    
+    public $has_actions = false;
     
     public function set_new_id() {}
 }

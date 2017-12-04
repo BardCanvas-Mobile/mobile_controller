@@ -11,6 +11,9 @@ class action extends abstract_record
     
     public $script_url = "";
     
+    /**
+     * @var string Options: get | frame
+     */
     public $call_method = "get";
     
     public function set_new_id() {}

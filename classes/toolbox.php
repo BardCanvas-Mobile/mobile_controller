@@ -7,6 +7,8 @@ use hng2_base\device;
 
 class toolbox
 {
+    const VALID_OUTPUT_TYPES = "HTML,JSON";
+    
     /**
      * @var string HTML|JSON
      */

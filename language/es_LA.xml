@@ -24,6 +24,22 @@
         <disabled_device>Error: este dispositivo ha sido deshabilitado. Deberás abrir sesión desde un navegador y eliminarlo o reactivarlo.</disabled_device>
     </authenticator>
     
+    <messages>
+        <prompts>
+            <disable_account><![CDATA[
+                ¿Deseas desactivar esta cuenta?
+                Todos los elementos publicados por este usuario se ocultarán de todos los índices.
+                No se enviará ninguna notificación al usuario.
+            ]]></disable_account>
+        </prompts>
+        <success_notifications>
+            <disable_account><![CDATA[
+                La cuenta se ha desactivado. Necesitarás refrescar cualquier índice o página que
+                hayas abierto de este sitio web.
+            ]]></disable_account>
+        </success_notifications>
+    </messages>
+    
     <settings_data>
         <title>Controlador móvil</title>
         
