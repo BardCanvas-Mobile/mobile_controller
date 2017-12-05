@@ -24,9 +24,10 @@ class feed_item extends abstract_record
     public $main_category_title   = "";
     public $parent_category_title = "";
     
-    public $title   = "";
-    public $excerpt = "";
-    public $content = "";
+    public $permalink = "";
+    public $title     = "";
+    public $excerpt   = "";
+    public $content   = "";
     
     public $publishing_date   = "";
     public $creation_ip       = "";
