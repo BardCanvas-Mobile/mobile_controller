@@ -24,6 +24,19 @@
         <disabled_device>Error: este dispositivo ha sido deshabilitado. Deberás abrir sesión desde un navegador y eliminarlo o reactivarlo.</disabled_device>
     </authenticator>
     
+    <remote_pm_composer>
+        <title>Enviar mensaje privado</title>
+        <target_name>
+            <caption>Destinatario:</caption>
+        </target_name>
+        <content>
+            <placeholder>Escribe tu mensaje de texto. Puedes anexar imágenes usando el control debajo.</placeholder>
+        </content>
+        <attachments>
+            <title>Anexar imágenes</title>
+        </attachments>
+    </remote_pm_composer>
+    
     <messages>
         <prompts>
             <disable_account><![CDATA[

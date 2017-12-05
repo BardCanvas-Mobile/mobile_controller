@@ -115,7 +115,30 @@ if( $modules["messaging"]->enabled )
         "id"          => "messaging:compose",
         "module_name" => "messaging",
         "script_url"  => "{$modules["messaging"]->get_url(true)}/send_pm.php",
-        "call_method" => "post",
+        "call_method" => "posting_form_composer",
+        "options"     => (object) array(
+            "composer" => (object) array(
+                "title" => trim($this_module->language->remote_pm_composer->title),
+                "fields" => (object) array(
+                    "target" => (object) array(
+                        "type" => "hidden",
+                    ),
+                    "target_name" => (object) array(
+                        "type"       => "text",
+                        "title"      => trim($this_module->language->remote_pm_composer->target_name->caption),
+                        "attributes" => "readonly",
+                    ),
+                    "content" => (object) array(
+                        "type"        => "textarea/expandible",
+                        "placeholder" => trim($this_module->language->remote_pm_composer->content->placeholder),
+                    ),
+                    "attachments" => (object) array(
+                        "type"        => "local_image_selector",
+                        "title"       => trim($this_module->language->remote_pm_composer->attachments->title),
+                    ),
+                )
+            )
+        ),
     ));
 }
 

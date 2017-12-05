@@ -24,6 +24,19 @@
         <disabled_device>Error: this device has been disabled. You will have to login to the website using a web browser and enable or delete this device and try again.</disabled_device>
     </authenticator>
     
+    <remote_pm_composer>
+        <title>Send private message</title>
+        <target_name>
+            <caption>Recipient:</caption>
+        </target_name>
+        <content>
+            <placeholder>Write your message. You can attach images using the control below.</placeholder>
+        </content>
+        <attachments>
+            <title>Attach images</title>
+        </attachments>
+    </remote_pm_composer>
+    
     <messages>
         <prompts>
             <disable_account><![CDATA[
@@ -39,7 +52,7 @@
             ]]></disable_account>
         </success_notifications>
     </messages>
-
+    
     <!-- Todo: translate this!!! -->
     <settings_data>
         
