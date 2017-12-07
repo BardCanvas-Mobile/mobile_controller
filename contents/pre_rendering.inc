@@ -17,9 +17,6 @@ use hng2_base\template;
 
 if( $_REQUEST["bcm_minimalistic_mode_enforced"] != "true" ) return;
 
-global $account;
-
 $template->clear_right_sidebar_items();
 $template->clear_left_sidebar_groups();
-$account->_exists = false;
-$account->state   = "disabled";
+$template->append("additional_body_attributes", " data-bcm-minimalistic-mode='true'");

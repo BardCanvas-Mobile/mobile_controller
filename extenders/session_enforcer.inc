@@ -15,8 +15,17 @@
  * @param string "bcm_output_type"   Mandatory for proper output messages
  */
 
+use hng2_base\account;
 use hng2_base\module;
 use hng2_modules\mobile_controller\toolbox;
+
+if( $_REQUEST["bcm_minimalistic_mode_enforced"] == "true" )
+{
+    header("X-bcm_minimalistic_mode_enforced: {$_REQUEST["bcm_minimalistic_mode_enforced"]}");
+    $account = new account();
+    
+    return;
+}
 
 header("X-bcm_force_session: {$_REQUEST["bcm_force_session"]}");
 header("X-bcm_output_type: {$_REQUEST["bcm_output_type"]}");
