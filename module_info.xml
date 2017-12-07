@@ -17,6 +17,11 @@
         <document_handler>extenders/document_handler.inc</document_handler>
     </php_includes>
     
+    <template_includes>
+        <html_head     priority="900">html_head.inc</html_head>
+        <pre_rendering priority="900">pre_rendering.inc</pre_rendering>
+    </template_includes>
+    
     <extends_to>
         <settings>
             <specs_renderer>
