@@ -67,6 +67,8 @@ class feed_item extends abstract_record
     
     public $allow_new_comments = false;
     
+    public $add_comment_action = null;
+    
     public $comments_limit_for_index = 10;
     
     public function set_new_id() {}
