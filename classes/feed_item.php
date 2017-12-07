@@ -28,6 +28,7 @@ class feed_item extends abstract_record
     public $title     = "";
     public $excerpt   = "";
     public $content   = "";
+    public $tags_list = array();
     
     public $publishing_date   = "";
     public $creation_ip       = "";
