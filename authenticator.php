@@ -81,7 +81,7 @@ $database->exec("
     `location`   = '".forge_geoip_location(get_remote_address())."'
 ");
 
-$meta["user_level"] = $account->level;
+$meta["user_level"] = (int) $account->level;
 $meta["avatar_url"] = $account->get_avatar_url(true);
 
 $toolbox->throw_response(array(
