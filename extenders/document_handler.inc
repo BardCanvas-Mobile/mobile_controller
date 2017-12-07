@@ -32,6 +32,7 @@ $manifest = (object) array(
     "icon"               => $root_url . ltrim($settings->get("modules:mobile_controller.icon"), "/"),
     
     "disclaimer"         => $settings->get("modules:mobile_controller.disclaimer"),
+    "documentLinks"      => array(),
     
     "loginRequired"      => $settings->get("modules:mobile_controller.login_required") == "true",
     "loginAuthenticator" => ltrim("{$current_module->get_url(false)}/authenticator.php", "/"),
@@ -42,6 +43,33 @@ $manifest = (object) array(
     "services"           => array(),
     "actionsRegistry"    => array(),
 );
+
+#region Document Links setup
+#===========================
+
+$raw_document_links = $settings->get("modules:mobile_controller.document_links");
+if( ! empty($raw_document_links) )
+{
+    foreach(explode("\n", $raw_document_links) as $line)
+    {
+        list($caption, $slug) = preg_split('/\s+-\s+/', $line);
+        $caption = trim($caption);
+        $link    = trim($slug);
+        if( substr($link, 0, 1) == "/" )        $link = $root_url . ltrim($link, "/");
+        elseif( substr($link, 0, 4) != 'http' ) $link = $root_url . $link;
+        
+        if( stristr($link, "?") === false ) $link .= "?bcm_minimalistic_mode_enforced=true";
+        else                                $link .= "&bcm_minimalistic_mode_enforced=true";
+        
+        $manifest->documentLinks[] = (object) array(
+            "caption" => $caption,
+            "url"     => $link,
+        );
+    }
+}
+
+#=========
+#endregion
 
 #region Services setup
 #=====================

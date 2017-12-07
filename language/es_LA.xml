@@ -168,6 +168,21 @@
             <type>code</type>
         </specs>
         
+        <specs key="document_links">
+            <title>Enlaces a documentos</title>
+            <description><![CDATA[
+                Si deseas que en el menú del sitio web aparezcan enlaces a documentos importantes
+                (p.e. Acuerdo de Uso, Política de Privacidad, etc.) usa esta área para definirlos,
+                uno por línea, usando la siguiente sintaxis:<br><br>
+                <code>Título - id_o_slug_del_documento</code><br><br>
+                Ejemplo:<br><br>
+                <code>Acerca de - /acerca-de</code><br>
+                <code>Acuerdo de uso - /acuerdo-de-uso</code><br>
+                <code>Política de privacidad - /politica</code><br>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
         <specs key="login_required">
             <title>Solicitar autenticación</title>
             <description><![CDATA[
