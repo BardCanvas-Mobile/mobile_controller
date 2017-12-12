@@ -25,9 +25,13 @@ use hng2_base\template;
     GLOBAL_AJAX_ADDED_PARAMS.bcm_force_session              = '<?= $_GET["bcm_force_session"] ?>';
     GLOBAL_AJAX_ADDED_PARAMS.bcm_output_type                = 'JSON';
     GLOBAL_AJAX_ADDED_PARAMS.bcm_minimalistic_mode_enforced = '<?= $_GET["bcm_minimalistic_mode_enforced"] ?>';
-    
-    $_NOTIFICATIONS_SYSTEM_DISABLED = true;
 </script>
+
+<? if( $config->globals["using_bcmobile"] ): ?>
+    <script type="text/javascript">
+        $_NOTIFICATIONS_SYSTEM_DISABLED = true;
+    </script>
+<? endif; ?>
 
 <? if( $_REQUEST["bcm_minimalistic_mode_enforced"] != "true" ) return; ?>
 
