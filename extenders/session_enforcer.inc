@@ -24,7 +24,7 @@ if( $_REQUEST["bcm_minimalistic_mode_enforced"] == "true" )
     header("X-bcm_minimalistic_mode_enforced: {$_REQUEST["bcm_minimalistic_mode_enforced"]}");
     $account = new account();
     
-    return;
+    if( $_REQUEST["bcm_force_session"] != "true" ) return;
 }
 
 header("X-bcm_force_session: {$_REQUEST["bcm_force_session"]}");
