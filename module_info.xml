@@ -13,7 +13,6 @@
     
     <php_includes>
         <after_loading_session>extenders/session_enforcer.inc</after_loading_session>
-        <bootstrap>extenders/bootstrap.inc</bootstrap>
         <document_handler>extenders/document_handler.inc</document_handler>
     </php_includes>
     
@@ -25,6 +24,7 @@
     <extends_to>
         <settings>
             <specs_renderer>
+                <prestart>extenders/settings_prestart.inc</prestart>
                 <preinits>extenders/settings_preinits.inc</preinits>
                 <services_order>extenders/settings_services_order.inc</services_order>
             </specs_renderer>

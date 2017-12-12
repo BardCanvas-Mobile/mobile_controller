@@ -8,19 +8,14 @@
  * 
  * Trailing vars:
  * @var module[] $modules
- * @var module   $module (self)
+ * @var module   $current_module (settings)
+ * @var module   $this_module    (self)
  */
 
 use hng2_base\module;
 
-#
-# Importer for external module settings
-#
-
-$this_module = $module;
-
 /** @var \SimpleXMLElement $module_language */
-$module_language = $module->language;
+$module_language = $this_module->language;
 
 foreach( $modules as $m )
 {
