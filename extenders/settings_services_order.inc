@@ -82,11 +82,13 @@ $ul_id = "sorder_" . uniqid();
                     $style_on  = $value == "enabled" ? "" : "display: none;";
                     $style_off = $value != "enabled" ? "" : "display: none;";
                     echo "
-                        <span class='mobctrl_item fa-pseudo-switch' data-value-on='enabled' data-value-off='disabled'
-                              onclick='toggle_fa_pseudo_switch(this); reserialize_mobctrl_services( this );'>
-                            <input type='hidden' data-field='state' value='$value'>
-                            <span class='toggler toggle-on  fa fa-toggle-on'  style='$style_on'></span>
-                            <span class='toggler toggle-off fa fa-toggle-off' style='$style_off'></span>
+                        <span class='mobctrl_item'>
+                            <span class='fa-pseudo-switch' data-value-on='enabled' data-value-off='disabled'
+                                  onclick='toggle_fa_pseudo_switch(this); reserialize_mobctrl_services( this );'>
+                                <input type='hidden' data-field='state' value='$value'>
+                                <span class='toggler toggle-on  fa fa-toggle-on'  style='$style_on'></span>
+                                <span class='toggler toggle-off fa fa-toggle-off' style='$style_off'></span>
+                            </span>
                         </span>
                     ";
                     ?>

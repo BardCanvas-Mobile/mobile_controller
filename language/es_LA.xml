@@ -220,7 +220,7 @@
             <title>Registro de servicios</title>
             <description><![CDATA[
                 Usa este selector para activar/desactivar/reordenar los servicios disponibles al usuario.<br><br>
-                Para modificar la configuración de cada servicio, checa los grupos de opciones debajo.
+                Para modificar la configuración de cada servicio, usa los controles individuales debajo.
             ]]></description>
             <type>@mobile_controller:specs_renderer/services_order</type>
         </specs>
