@@ -176,4 +176,7 @@ $this_module->load_extensions("actions_registry", "definitions");
 #endregion
 
 header("Content-Type: application/json; charset=utf-8");
-die(json_encode($manifest));
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+
+die(json_encode( $manifest ));
