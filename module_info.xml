@@ -13,7 +13,7 @@
     
     <php_includes>
         <after_loading_session>extenders/session_enforcer.inc</after_loading_session>
-        <document_handler>extenders/document_handler.inc</document_handler>
+        <document_handler>extenders/manifest_builder.inc</document_handler>
     </php_includes>
     
     <template_includes>
