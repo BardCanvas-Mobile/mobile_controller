@@ -29,6 +29,11 @@
                 <services_order>extenders/settings_services_order.inc</services_order>
             </specs_renderer>
         </settings>
+        <messaging>
+            <send_pm>
+                <before_sending>extenders/messaging_add_embedded_attachments.inc</before_sending>
+            </send_pm>
+        </messaging>
     </extends_to>
     
     <extension_areas_info><![CDATA[
