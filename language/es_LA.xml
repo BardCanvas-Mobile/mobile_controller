@@ -51,6 +51,12 @@
                 hayas abierto de este sitio web.
             ]]></disable_account>
         </success_notifications>
+        <missing_params>Faltan parámetros. Has llamado este script de una forma incorrecta.</missing_params>
+        <no_attachments_received>No se ha recibido ningún medio anexo.</no_attachments_received>
+        <invalid_file_uploaded>Archivo subido inválido. Favor de reintentar.</invalid_file_uploaded>
+        <file_type_rejected>Lo sentimos, pero el tipo de archivo que has subido está permitido.</file_type_rejected>
+        <cannot_move_file>El archivo que has subido no se puede procesar. Por favor intenta de nuevo.</cannot_move_file>
+        <cannot_create_temp_dir>No se puede crear el directorio de datos temporale. Por favor infórmale al personal de soporte de este sitio web.</cannot_create_temp_dir>
     </messages>
     
     <settings_data>

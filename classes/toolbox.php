@@ -111,4 +111,39 @@ class toolbox
         
         $device->ping();
     }
+    
+    /**
+     * Returns an array of a pre-processed fake $_FILES collection.
+     *
+     * @return array
+     * 
+     * @throws \Exception
+     */
+    public function extract_embedded_media()
+    {
+        global $config;
+        
+        $return = array();
+        foreach($_POST["embedded_attachments"] as $attachment)
+        {
+            list($type, $name, $mime, $tmp_name) = explode(";", $attachment);
+            
+            $target_dir = $config->datafiles_location . "/tmp";
+            $tmp_name   = "$target_dir/$tmp_name";
+            if( ! file_exists($tmp_name) )
+                throw new \Exception("File $name not found.");
+            
+            if( ! isset($return[$type]) ) $return[$type] = array();
+            
+            $return[$type][] = array(
+                "name"     => $name,
+                "type"     => $mime,
+                "tmp_name" => $tmp_name,
+                "error"    => null,
+                "size"     => filesize($tmp_name),
+            );
+        }
+        
+        return $return;
+    }
 }

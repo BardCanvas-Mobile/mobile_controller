@@ -51,6 +51,12 @@
                 already open.
             ]]></disable_account>
         </success_notifications>
+        <missing_params>Expected params are missing. You've called this script in a  wrong way.</missing_params>
+        <no_attachments_received>No media attachments have been received.</no_attachments_received>
+        <invalid_file_uploaded>Invalid file uploaded. Please try again.</invalid_file_uploaded>
+        <file_type_rejected>Sorry, but the file type you've uploaded is forbidden.</file_type_rejected>
+        <cannot_move_file>The file you uploaded cannot be processed. Please try again.</cannot_move_file>
+        <cannot_create_temp_dir>Cannot create temporary data directory. Please inform the tech support staff of this website.</cannot_create_temp_dir>
     </messages>
     
     <!-- Todo: translate this!!! -->
