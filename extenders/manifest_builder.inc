@@ -24,6 +24,9 @@ $manifest = (object) array(
     "version"            => $settings->get("modules:mobile_controller.version"),
     "lastUpdate"         => $settings->get("modules:mobile_controller.last_update"),
     "rootURL"            => $root_url,
+    
+    "attachmentsReceiverURL" => $this_module->get_url(true) . "/scripts/receive_attachment.php",
+    
     "contactEmail"       => $settings->get("engine.webmaster_address"),
     "language"           => $settings->get("modules:mobile_controller.language_caption"),
     "company"            => $settings->get("modules:mobile_controller.company"),
