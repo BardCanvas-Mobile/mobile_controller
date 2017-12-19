@@ -39,6 +39,12 @@ $manifest = (object) array(
     
     "loginRequired"      => $settings->get("modules:mobile_controller.login_required") == "true",
     "loginAuthenticator" => ltrim("{$current_module->get_url(false)}/authenticator.php", "/"),
+    
+    "hasFacebookLogin"   => $settings->get("modules:single_signon.facebook_app_id")     != "" &&
+                            $settings->get("modules:single_signon.facebook_app_secret") != "",
+    
+    "facebookLoginChecker" => $this_module->get_url(true) . "/facebook_authenticator.php",
+    
     "userLevels"         => $config->user_levels_by_level,
     
     "timezoneOffset"     => strftime("%z"),

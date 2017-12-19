@@ -73,6 +73,7 @@ $device_pref_key = "bcm_device:{$device_hash}";
 if( empty($account->engine_prefs[$device_pref_key]) )
     $account->set_engine_pref($device_pref_key, $device_record->id_device);
 
+/** @noinspection PhpUnhandledExceptionInspection */
 $database->exec("
     insert ignore into account_logins set
     `id_account` = '$account->id_account',

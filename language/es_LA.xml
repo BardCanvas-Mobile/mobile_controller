@@ -24,6 +24,82 @@
         <disabled_device>Error: este dispositivo ha sido deshabilitado. Deberás abrir sesión desde un navegador y eliminarlo o reactivarlo.</disabled_device>
     </authenticator>
     
+    <facebook_authenticator>
+        <page_title>Autenticación vía Facebook</page_title>
+        <empty_token>
+            <title>Falta token de aplicación</title>
+            <raw_info>No se ha recibido el token de la aplicación.</raw_info>
+            <info><![CDATA[
+                <p>
+                    Lo sentimos, pero no se ha recibido el token de la aplicación de BardCanvas para
+                    llevar a cabo la autenticación vía Facebook.
+                </p>
+                <p>
+                    Si necesitas asistencia, por favor solicítala usando
+                    <a href="{$root_path}/contact/">nuestra forma de contacto.</a>
+                </p>
+            ]]></info>
+        </empty_token>
+        <missing_device>
+            <title>Falta información de dispositivo</title>
+            <info><![CDATA[
+                <p>
+                    Lo sentimos, pero no se ha recibido la información necesaria de tu dispositivo
+                    para la autenticación vía Facebook.
+                </p>
+                <p>
+                    Si necesitas asistencia, por favor solicítala usando
+                    <a href="{$root_path}/contact/">nuestra forma de contacto.</a>
+                </p>
+            ]]></info>
+        </missing_device>
+        <authentication_page>
+            <title>Autenticación vía Facebook</title>
+            <info><![CDATA[
+                <p>
+                    Para poder registrar este sitio web con tu cuenta de Facebook en BardCanvas móvil,
+                    es necesario que abras sesión con Facebook desde aquí y autorices la aplicación.
+                </p>
+            ]]></info>
+            <logged_in_as><![CDATA[ Sesión abierta como <b>{$display_name}</b> ]]></logged_in_as>
+            <continue_with_facebook>Continuar con Facebook</continue_with_facebook>
+            <post_info><![CDATA[
+                <p>
+                    Si deseas información acerca del uso de tus datos, por favor abre nuestro sitio
+                    web desde el navegador y consulta los términos de uso del servicio y la política
+                    de privacidad. <a href="{$root_path}/">Visitar sitio web ahora.</a>
+                </p>
+            ]]></post_info>
+        </authentication_page>
+        <error_writing_file>
+            <title>Error al guardar datos</title>
+            <info><![CDATA[
+                <p>
+                    No se ha podido guardar la información para el llamado desde la app.
+                    Posiblemente haya un problema en el servidor que impide que se escriban datos temporales.
+                </p>
+                <p>
+                    Por favor intenta de nuevo. Si el problema persiste,
+                    dirígete a <a href="{$root_path}/contact/">nuestra forma de contacto</a>
+                    y repórtalo para que el personal de soporte técnico lo corrija.
+                </p>
+            ]]></info>
+        </error_writing_file>
+        <empty_data>No se ha podido extraer la información de inicio de sesión</empty_data>
+        <authenticated>
+            <title>Autenticación exitosa</title>
+            <info><![CDATA[
+                <p>
+                    Se ha guardado con éxito la información de inicio de sesión como
+                    <span class="framed_content inlined state_highlight">{$display_name}</span>.
+                </p>
+                <p>
+                    Por favor cierra el navegador y regresa a BardCanvas Móvil para continuar.
+                </p>
+            ]]></info>
+        </authenticated>
+    </facebook_authenticator>
+    
     <remote_pm_composer>
         <title>Enviar mensaje privado</title>
         <target_name>

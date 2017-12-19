@@ -24,6 +24,9 @@
         <disabled_device>Error: this device has been disabled. You will have to login to the website using a web browser and enable or delete this device and try again.</disabled_device>
     </authenticator>
     
+    <!-- Todo: translate this!!! -->
+    <facebook_authenticator></facebook_authenticator>
+    
     <remote_pm_composer>
         <title>Send private message</title>
         <target_name>
@@ -60,8 +63,6 @@
     </messages>
     
     <!-- Todo: translate this!!! -->
-    <settings_data>
-        
-    </settings_data>
+    <settings_data></settings_data>
     
 </language>
