@@ -29,12 +29,12 @@ class toolbox
     {
         if( $this->output_type == "JSON" ) $this->throw_response($title);
         
-        global $config;
+        global $config, $language;
         
         $retry_button = $show_retry_button == false ? "" : "
             <p class=\"buttons-row\">
                 <a class=\"button\" href=\"#\" onclick=\"BCapp.reloadAjaxifiedService(this)\">
-                    Recargar
+                    {$language->reload}
                 </a>
             </p>
         ";
