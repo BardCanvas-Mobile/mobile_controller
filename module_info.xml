@@ -34,6 +34,16 @@
                 <before_sending>extenders/messaging_add_embedded_attachments.inc</before_sending>
             </send_pm>
         </messaging>
+        <posts>
+            <post_record_class>
+                <get_processed_content priority="999">extenders/media_processor.inc</get_processed_content>
+            </post_record_class>
+        </posts>
+        <comments>
+            <comment_record_class>
+                <get_processed_content priority="999">extenders/media_processor.inc</get_processed_content>
+            </comment_record_class>
+        </comments>
     </extends_to>
     
     <extension_areas_info><![CDATA[
