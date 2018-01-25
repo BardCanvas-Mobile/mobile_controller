@@ -145,8 +145,8 @@
         <specs key="services_engine_enabled">
             <title>Motor de servicios activo</title>
             <description><![CDATA[
-                Si deseas desactivar todos los servicios móviles, usa esta opción.<br><br>
-                <i class="fa fa-info-circle"></i>
+                Si deseas activar o desactivar todos los servicios móviles, usa este interruptor.<br><br>
+                <i class="fa fa-info-circle"></i> Nota:
                 Cuando la app móvil se conecta al sitio web, buscará un manifiesto de servicios.
                 Este módulo lo genera con base en toda la configuración especificada en estos controles.<br><br>
                 Si el motor está activo, podrás ver el manifiesto
@@ -170,7 +170,7 @@
                 Nombre corto del sitio web. De no especificarse, se usará el título completo especificado
                 arriba.<br>
                 <i class="fa fa-info-circle"></i>
-                Si el nombre del sitio web es muy largo, especificar aquí un par de palabras.
+                Si el nombre del sitio web o el título completo es muy largo, especificar aquí un par de palabras.
             ]]></description>
             <type>text</type>
         </specs>
