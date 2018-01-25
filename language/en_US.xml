@@ -24,8 +24,81 @@
         <disabled_device>Error: this device has been disabled. You will have to login to the website using a web browser and enable or delete this device and try again.</disabled_device>
     </authenticator>
     
-    <!-- Todo: translate this!!! -->
-    <facebook_authenticator></facebook_authenticator>
+    <facebook_authenticator>
+        <page_title>Facebook Authentication</page_title>
+        <empty_token>
+            <title>Missing auth token</title>
+            <raw_info>The app authentication token has not been received.</raw_info>
+            <info><![CDATA[
+                <p>
+                    Sorry, but the BardCanvas app authentication token for Facebook
+                    authentication has not been received.
+                </p>
+                <p>
+                    If you need assistance, please ask the tech support staff using
+                    <a href="{$root_path}/contact/">our contact form.</a>
+                </p>
+            ]]></info>
+        </empty_token>
+        <missing_device>
+            <title>Missing device information</title>
+            <info><![CDATA[
+                <p>
+                    Sorry, but the information about your device is missing. It is neccessary
+                    to track your Facebook authentication request.
+                </p>
+                <p>
+                    If you need assistance, please ask the tech support staff using
+                    <a href="{$root_path}/contact/">our contact form.</a>
+                </p>
+            ]]></info>
+        </missing_device>
+        <authentication_page>
+            <title>Facebook authentication</title>
+            <info><![CDATA[
+                <p>
+                    In order to register this website with your Facebook account on the BardCanvas app,
+                    you need to open your Facebook session here and authorize the app.
+                </p>
+            ]]></info>
+            <logged_in_as><![CDATA[ Session opened as <b>{$display_name}</b> ]]></logged_in_as>
+            <continue_with_facebook>Continue with Facebook</continue_with_facebook>
+            <post_info><![CDATA[
+                <p>
+                    If you wish to get information about your data usage, please open our website
+                    from a web browser and check our Terms of Service and the Privacy Policy.
+                    <a href="{$root_path}/">Visit the website now.</a>
+                </p>
+            ]]></post_info>
+        </authentication_page>
+        <error_writing_file>
+            <title>Error while saving data</title>
+            <info><![CDATA[
+                <p>
+                    We couldn't save the required information to be retrieved by the app.
+                    There might be a problem in the server that it is preventing temporary data to be saved.
+                </p>
+                <p>
+                    Please try again. If the problem persists, go to
+                    <a href="{$root_path}/contact/">our contact form</a>
+                    and report this error so the tech support staff can fix it.
+                </p>
+            ]]></info>
+        </error_writing_file>
+        <empty_data>Couldn't extract session information</empty_data>
+        <authenticated>
+            <title>Successful authentication</title>
+            <info><![CDATA[
+                <p>
+                    The session information has been saved for 
+                    <span class="framed_content inlined state_highlight">{$display_name}</span>.
+                </p>
+                <p>
+                    Please close the browser and go back to the BardCanvas app to continue.
+                </p>
+            ]]></info>
+        </authenticated>
+    </facebook_authenticator>
     
     <remote_pm_composer>
         <title>Send private message</title>
@@ -62,7 +135,178 @@
         <cannot_create_temp_dir>Cannot create temporary data directory. Please inform the tech support staff of this website.</cannot_create_temp_dir>
     </messages>
     
-    <!-- Todo: translate this!!! -->
-    <settings_data></settings_data>
+    <settings_data>
+        <title>Mobile controller</title>
+        
+        <!-- ======================================= -->
+        <specs is_separator="true">Basic details</specs>
+        <!-- ======================================= -->
+        
+        <specs key="services_engine_enabled">
+            <title>Engine enabled</title>
+            <description><![CDATA[
+                If you want to enable or disable all the mobile services, use this switch.<br><br>
+                <i class="fa fa-info-circle"></i> Note:
+                When the mobile app conntects to the website, it will look for a services manifest.
+                This module generates it using all the settings configured within these controls.<br><br>
+                If the engine is enabled, you'll be able to see the manifest
+                <a href="{$full_root_url}/bardcanvas_mobile.json" target="_blank">clicking here</a>.
+            ]]></description>
+            <type>boolean</type>
+        </specs>
+        
+        <specs key="full_name">
+            <title>Full title</title>
+            <description><![CDATA[
+                Title/name of the website as it is shown to the app user.
+                If not provided, the website name will be used instead.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="short_name">
+            <title>Short name</title>
+            <description><![CDATA[
+                Short name of this website.
+                If not provided, the full title (as specified above) will be used.<br>
+                <i class="fa fa-info-circle"></i>
+                If the website name or full title is too long, shorten it here to a couple of words.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="version">
+            <title>Services version</title>
+            <description><![CDATA[
+                Use only an integer and decimals (E.G. <code>1.1</code>) to define the version.<br>
+                <i class="fa fa-info-circle"></i>
+                It should be incremented in case of modifying the services configuration.<br>
+                <i class="fa fa-warning"></i>
+                Other modules may modify this value.
+            ]]></description>
+            <type>number</type>
+            <options>
+                <step>any</step>
+            </options>
+        </specs>
+        
+        <specs key="last_update">
+            <title>Last update date</title>
+            <description><![CDATA[
+                Only for internal reference. Use the next format:
+                <code>yyyy-mm-dd hh:mm</code>
+            ]]></description>
+            <type>date</type>
+        </specs>
+        
+        <specs key="root_url">
+            <title>Fully qualified URL of the website</title>
+            <description><![CDATA[
+                If this website could be accessed by <code>www.dominio.com</code> and/or <code>dominio.com</code>,
+                please specify here which of them is the preferred entry point
+                (with www, without www, http or https).<br>
+                <i class="fa fa-warning"></i> <b>Important:</b>
+                If you have redirects in your entry point variants, please specify here
+                one that is direct to avoid issues on the app.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="description">
+            <title>Description</title>
+            <description><![CDATA[
+                Brief description of the services offered by this website through the mobile platform.
+            ]]></description>
+            <type>textarea</type>
+        </specs>
+        
+        <specs key="icon">
+            <title>Site icon</title>
+            <description><![CDATA[
+                A <code>256x256</code> pixels image to show next to the website name on the app's menus.
+            ]]></description>
+            <type>@gallery:specs_renderer/image_selector</type>
+            <options>
+                <image_size>full</image_size>
+            </options>
+        </specs>
+        
+        <specs key="language_caption">
+            <title>Languaje</title>
+            <description><![CDATA[
+                Specify the language in which the contents are shown
+                (E.G. <code>English (United States)</code>, <code>Español (América Latina)</code>, etc.)
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="disclaimer">
+            <title>Disclaimer</title>
+            <description><![CDATA[
+                If the website ofers delicate contents or services that require warnings, 
+                use this area to describe them.
+                You can use basic HTML tags.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="document_links">
+            <title>Document links</title>
+            <description><![CDATA[
+                If you wish to add on the website menu links to certain posts or important
+                documents (E.G. Terms of use and Privacy Policy) use this area to define them,
+                one per line, using the next syntax:<br><br>
+                <code>Title - id_or_slug</code><br><br>
+                Examples:<br><br>
+                <code>About... - about</code><br>
+                <code>Terms of use - terms-of-use</code><br>
+                <code>Privacy policy - privacy-policy</code><br>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="login_required">
+            <title>Require authentication</title>
+            <description><![CDATA[
+                If enabled, the app will request login credentials to the user and validate them
+                before adding the site to the app.
+            ]]></description>
+            <type>boolean</type>
+        </specs>
+        
+        <!-- =============================================== -->
+        <specs is_separator="true">Owner details</specs>
+        <!-- =============================================== -->
+        
+        <specs key="company">
+            <title>Owner name</title>
+            <description><![CDATA[
+                Name of the person or company that owns this website. Optional.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="company_page_url">
+            <title>Owner website</title>
+            <description><![CDATA[
+                It should start with <code>http://</code> or <code>https://</code>. Optional.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <!-- =========================================== -->
+        <specs is_separator="true">Services: control</specs>
+        <!-- =========================================== -->
+        
+        <specs key="services_registry">
+            <title>Services registry</title>
+            <description><![CDATA[
+                Use this selector to enable/disable/reorder the services available for the user.<br><br>
+                To modify the configuration of each service, use the individual controls below.
+            ]]></description>
+            <type>@mobile_controller:specs_renderer/services_order</type>
+        </specs>
+        
+    </settings_data>
     
 </language>
