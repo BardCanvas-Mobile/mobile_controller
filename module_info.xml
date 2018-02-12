@@ -49,6 +49,7 @@
     <extension_areas_info><![CDATA[
         Services registry: definitions.
         Actions registry: definitions.
+        Authenticator: After meta init.
     ]]></extension_areas_info>
     
 </module>

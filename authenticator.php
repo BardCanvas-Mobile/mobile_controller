@@ -51,7 +51,9 @@ if( $account->password != $_REQUEST["password"] )
 if( $account->state != "enabled" )
     $toolbox->throw_response(trim($current_module->language->authenticator->account_disabled));
 
-$meta          = array();
+$meta = array();
+$current_module->load_extensions("authenticator", "after_meta_init");
+
 $device_string = stripslashes($_REQUEST["device"]);
 $device_record = new device($account->id_account, $device_string);
 if( $device_record->_exists )
