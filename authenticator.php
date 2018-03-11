@@ -31,6 +31,9 @@ if( empty($_REQUEST["username"]) )
 if( is_numeric($_REQUEST["username"]) )
     $toolbox->throw_response(trim($current_module->language->authenticator->invalid_username_provided));
 
+if( preg_match('/[^a-zA-z0-9\-_]/', $_REQUEST["username"]) )
+    $toolbox->throw_response(trim($current_module->language->authenticator->invalid_username_provided));
+
 if( empty($_REQUEST["password"]) )
     $toolbox->throw_response(trim($current_module->language->authenticator->no_password_provided));
 
