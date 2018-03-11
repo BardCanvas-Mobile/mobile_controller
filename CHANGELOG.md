@@ -1,6 +1,10 @@
 
 # Mobile Controller Change Log
 
+## [0.0.4] - 2018-03-10
+
+- Added check to avoid authentication attempts with aliases instead of user names.
+
 ## [0.0.3] - 2018-02-11
 
 - Added extension points.
