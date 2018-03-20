@@ -30,6 +30,7 @@ if( $_REQUEST["bcm_minimalistic_mode_enforced"] == "true" )
 header("X-bcm_force_session: {$_REQUEST["bcm_force_session"]}");
 header("X-bcm_output_type: {$_REQUEST["bcm_output_type"]}");
 header("X-bcm_platform: {$_REQUEST["bcm_platform"]}");
+header("X-bcm_version: {$_REQUEST["bcm_version"]}");
 header("X-bcm_access_token: {$_REQUEST["bcm_access_token"]}");
 
 if( $_REQUEST["bcm_force_session"] != "true" ) return;

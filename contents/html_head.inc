@@ -21,6 +21,7 @@ use hng2_base\template;
 <script type="text/javascript">
     if( typeof GLOBAL_AJAX_ADDED_PARAMS === 'undefined' ) GLOBAL_AJAX_ADDED_PARAMS = {};
     GLOBAL_AJAX_ADDED_PARAMS.bcm_platform                   = '<?= $_GET["bcm_platform"] ?>';
+    GLOBAL_AJAX_ADDED_PARAMS.bcm_version                    = '<?= $_GET["bcm_version"] ?>';
     GLOBAL_AJAX_ADDED_PARAMS.bcm_access_token               = '<?= $_GET["bcm_access_token"] ?>';
     GLOBAL_AJAX_ADDED_PARAMS.bcm_force_session              = '<?= $_GET["bcm_force_session"] ?>';
     GLOBAL_AJAX_ADDED_PARAMS.bcm_output_type                = 'JSON';
