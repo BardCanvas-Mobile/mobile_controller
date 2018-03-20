@@ -95,6 +95,7 @@ $meta["avatar_url"] = $account->get_avatar_url(true);
 $toolbox->throw_response(array(
     "message" => "OK",
     "data"    => array(
+        "user_name"    => $account->user_name,
         "display_name" => $account->display_name,
         "access_token" => md5($device_record->id_device),
         "meta"         => $meta,
