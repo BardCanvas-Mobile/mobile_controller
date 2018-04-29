@@ -1,6 +1,10 @@
 
 # Mobile Controller Change Log
 
+## [0.0.6] - 2018-04-29
+
+- Added check for services availability.
+
 ## [0.0.5] - 2018-03-19
 
 - Passed BCM version on web requests.
