@@ -15,6 +15,10 @@ if( empty($_GET["handle"]) ) return;
 $handle = trim(stripslashes($_GET["handle"]));
 if( ! preg_match("/^bardcanvas_mobile.json/i", $handle) ) return;
 
+if( empty($modules["mobile_controller"]) ) throw_fake_404();
+if( ! $modules["mobile_controller"]->enabled ) throw_fake_404();
+if( $settings->get("modules:mobile_controller.services_engine_enabled") != "true" ) throw_fake_404();
+
 $root_url = $settings->get("modules:mobile_controller.root_url");
 if( substr($root_url, -1) != "/" ) $root_url .= "/";
 
