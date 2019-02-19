@@ -111,6 +111,8 @@ class toolbox
         if( $device->state != "enabled" ) $this->throw_error(trim($current_module->language->authenticator->disabled_device));
         
         $device->ping();
+        
+        if( $_REQUEST["bcm_keep_session"] == "true" ) $account->open_session($device);
     }
     
     /**
