@@ -1,6 +1,11 @@
 
 # Mobile Controller Change Log
 
+## [0.0.7] - 2019-02-19
+
+- Added pre-rendering conditions to ease DOM manipulations on forced sessions.
+- Added session keeping support.
+
 ## [0.0.6] - 2018-04-29
 
 - Added check for services availability.
