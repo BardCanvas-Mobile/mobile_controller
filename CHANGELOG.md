@@ -1,6 +1,10 @@
 
 # Mobile Controller Change Log
 
+## [0.0.8] - 2021-02-27
+
+- Added 2FA support.
+
 ## [0.0.7] - 2019-02-19
 
 - Added pre-rendering conditions to ease DOM manipulations on forced sessions.
