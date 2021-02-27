@@ -22,6 +22,11 @@
         <unknown_device>Error: tu dispositivo no ha sido encontrado en la base de datos de usuarios. Por favor elimina este sitio web y agrégalo de nuevo.</unknown_device>
         <disabled_account>Error: esta cuenta está desactivada en nuestra base de datos.</disabled_account>
         <disabled_device>Error: este dispositivo ha sido deshabilitado. Deberás abrir sesión desde un navegador y eliminarlo o reactivarlo.</disabled_device>
+        <tfa_required>
+            <invalid_client>Esta cuenta tiene habilitada la autenticación de dos factores, pero no se ha logrado reconocer la app que estás usando para accesar este sitio web.</invalid_client>
+            <older_client>Esta cuenta tiene habilitada la autenticación de dos factores, pero tu Cliente Móvil de BardCanvas no la soporta. Necesitas actualizarlo.</older_client>
+            <wrong_code>Código inválido o expirado. Intenta de nuevo.</wrong_code>
+        </tfa_required>
     </authenticator>
     
     <facebook_authenticator>

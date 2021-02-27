@@ -22,6 +22,11 @@
         <unknown_device>Error: your device wasn't found on the database. Please delete this website from the app and add it again.</unknown_device>
         <disabled_account>Error: your account is disabled. You wont be able to login.</disabled_account>
         <disabled_device>Error: this device has been disabled. You will have to login to the website using a web browser and enable or delete this device and try again.</disabled_device>
+        <tfa_required>
+            <invalid_client>This account has two factor authentication enabled, but the app you're using to access this website was not recognized.</invalid_client>
+            <older_client>This account has two factor authentication enabled, but your BardCanvas Mobile client app doesn't support it. You need to update it.</older_client>
+            <wrong_code>Invalid/expired code. Please try again.</wrong_code>
+        </tfa_required>
     </authenticator>
     
     <facebook_authenticator>
