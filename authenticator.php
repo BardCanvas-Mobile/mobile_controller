@@ -70,6 +70,48 @@ if( $account->state != "enabled" )
     $toolbox->throw_response(trim($current_module->language->authenticator->account_disabled));
 
 #
+# IPs whitelist checks
+#
+
+$ips_whitelist = $account->engine_prefs["@accounts:ips_whitelist"];
+if( ! empty($ips_whitelist) )
+{
+    $ip    = get_user_ip();
+    $lines = explode("\n", $ips_whitelist);
+    $found = false;
+    foreach($lines as $line)
+    {
+        $listed_ip = trim($line);
+        if( empty($listed_ip) ) continue;
+        if( substr($listed_ip, 0, 1) == "#" ) continue;
+        
+        if( stristr($listed_ip, "*") )
+        {
+            $pattern = str_replace(".", "\\.", $listed_ip);
+            $pattern = str_replace("*", ".*", $listed_ip);
+            
+            if(preg_match("/$pattern/", $ip) )
+            {
+                $found = true;
+                break;
+            }
+        }
+        else
+        {
+            if( $ip == $listed_ip )
+            {
+                $found = true;
+                break;
+            }
+        }
+    }
+    
+    if( ! $found ) $toolbox->throw_response(trim(
+        $modules["accounts"]->language->errors->ip_not_in_whitelist
+    ));
+}
+
+#
 # 2FA checkup
 #
 
