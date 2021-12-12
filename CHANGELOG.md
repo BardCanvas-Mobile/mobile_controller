@@ -1,6 +1,10 @@
 
 # Mobile Controller Change Log
 
+## [0.1.1] - 2021-12-11
+
+- Fixed search pattern issue in whitelist checks.
+
 ## [0.1.0] - 2021-12-10
 
 - Added IPs whitelist support.
