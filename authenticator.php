@@ -106,9 +106,13 @@ if( ! empty($ips_whitelist) )
         }
     }
     
-    if( ! $found ) $toolbox->throw_response(trim(
-        $modules["accounts"]->language->errors->ip_not_in_whitelist
-    ));
+    if( ! $found )
+    {
+        $modules["accounts"]->load_extensions("login", "after_whitelist_check_fail");
+        $toolbox->throw_response(trim(
+            $modules["accounts"]->language->errors->ip_not_in_whitelist
+        ));
+    }
 }
 
 #
