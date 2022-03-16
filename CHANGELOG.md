@@ -1,6 +1,10 @@
 
 # Mobile Controller Change Log
 
+## [0.1.3] - 2022-03-16
+
+- Refactored IP Geolocation functions.
+
 ## [0.1.2] - 2021-12-13
 
 - Tuned IP whitelist checks.
