@@ -171,14 +171,16 @@ if( empty($account->engine_prefs[$device_pref_key]) )
 $config->globals["@accounts:account_id_logging_in"] = $account->id_account;
 $modules["accounts"]->load_extensions("login", "before_inserting_login_record");
 
+$ip = get_remote_address();
+
 $database->exec("
     insert ignore into account_logins set
     `id_account` = '$account->id_account',
     `id_device`  = '$device_record->id_device',
     `login_date` = '".date("Y-m-d H:i:s")."',
-    `ip`         = '".get_remote_address()."',
-    `hostname`   = '".gethostbyaddr(get_remote_address())."',
-    `location`   = '".forge_geoip_location(get_remote_address())."'
+    `ip`         = '$ip',
+    `hostname`   = '".@gethostbyaddr($ip)."',
+    `location`   = '".addslashes(get_geoip_location_with_isp($ip))."'
 ");
 
 $meta["user_level"] = (int) $account->level;
